@@ -1,0 +1,304 @@
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{parskip}
+\newcommand{\blankline}{\quad\pagebreak[2]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify Course title, instructor name, semester here %%%%%%%%
+
+\title{Econ 590: Machine Learning in Economics}
+\author{Anuar Assamidanov}
+\date{Spring, 2022}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[sc]{mathpazo}
+\linespread{1.05} % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+\usepackage[mmddyyyy]{datetime}% http://ctan.org/pkg/datetime
+\usepackage{advdate}% http://ctan.org/pkg/advdate
+\newdateformat{syldate}{\twodigit{\THEMONTH}/\twodigit{\THEDAY}}
+\newsavebox{\MONDAY}\savebox{\MONDAY}{Mon}% Mon
+\newcommand{\week}[1]{%
+%  \cleardate{mydate}% Clear date
+% \newdate{mydate}{\the\day}{\the\month}{\the\year}% Store date
+  \paragraph*{\kern-2ex\quad #1, \syldate{\today} - \AdvanceDate[4]\syldate{\today}:}% Set heading  \quad #1
+%  \setbox1=\hbox{\shortdayofweekname{\getdateday{mydate}}{\getdatemonth{mydate}}{\getdateyear{mydate}}}%
+  \ifdim\wd1=\wd\MONDAY
+    \AdvanceDate[7]
+  \else
+    \AdvanceDate[7]
+  \fi%
+}
+\usepackage{setspace}
+\usepackage{multicol}
+%\usepackage{indentfirst}
+\usepackage{fancyhdr,lastpage}
+\usepackage{url}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{layout}
+
+\lhead{}
+\chead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify header here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\rhead{\footnotesize ECON 590}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\definecolor{clemsonorange}{HTML}{EA6A20}
+\hypersetup{colorlinks,breaklinks,linkcolor=clemsonorange,urlcolor=clemsonorange,anchorcolor=clemsonorange,citecolor=black}
+
+\begin{document}
+
+\maketitle
+
+\blankline
+
+\begin{tabular*}{.93\textwidth}{@{\extracolsep{\fill}}lr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+E-mail: \texttt{aassamidanov@fullerton.edu}  \\
+Class Room: SGMH 2504 \\
+Class Hours: M 7-9:45pm \\
+Office Hours: M/Th 10-11 am   \\
+&  \\
+\hline
+\end{tabular*}
+
+\vspace{5 mm}
+
+% First Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course Description}
+
+This introductory course gives an overview of different concepts, techniques, and algorithms in machine learning (ML) and their applications in an economic setting. We begin with classification, linear and non-linear regressions, bagging, boosting, and end with more recent neural networks and deep learning models. We will also touch on the recent methods at the intersection of ML and econometrics, designed for causal inference, optimal policy estimation, estimation of counterfactual effects. This course will give students the conceptual knowledge behind these ML methods, emphasizing their practical application. Students will learn how to program machine learning algorithms in Python using cutting-edge libraries such as TensorFlow and Scikit-learn.
+
+
+% \noindent New paragraph. Bla bla bla ...
+
+% Second Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Required Materials}
+
+\begin{itemize}
+\item Textbook (Required): Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, (Aurélien Géron, 2019)
+\item Textbook (optional): An Introduction to Statistical Learning, (James, Witten,Hastie, Tibshirani,
+2013), \url{https://www-bcf.usc.edu/~gareth/ISL/ISLR}
+\item Textbook (optional): The Elements of Statistical Learning (James, Witten,Hastie, Tibshirani, 2013), \url{https://web.stanford.edu/~hastie/Papers/ESLII.pdf}
+\end{itemize}
+
+% Third Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Prerequisites/Corequisites}
+Prerequisites: Statistics, Applied Econometrics
+
+% Fourth Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course Objectives}
+\begin{enumerate}
+\item Demonstrate the ability to use the existing machine-learning techniques for analyzing the given economic problem.
+\item Compare and contrast different algorithms
+\item Analyze and discuss the meaning of their codes
+\end{enumerate}
+
+% Fifth Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Course Structure}
+
+\subsection*{Class Structure}
+
+\subsubsection*{Lecture}
+
+Classes will be regular lectures on theories and methodologies of ML algorithms. 
+
+\subsubsection*{Labs }
+During lab sessions, students apply the algorithms and practice using Python. Students will finish a given example by the end of each lab session.  To support theses in-class exercises, students should bring laptops to class.  Software installation instructions will be provided on the first day of class.  Laptops should only be used during class for these exercises and, optionally, for taking notes.  If you don't bring a laptop to class, please pair with another student for these in-class exercises.
+
+We will use Python. Most of the modern data science applications are written in Python, supplemented with data-science platforms such as Google TensorFlow and Scikit. An additional advantage of Python is that it is an open-source software. All the problem sets will use examples and data related to economics.
+
+We will be using the Jupyter Notebook application to create and edit Python code. Here is this link to download Jupyter Notebook \url{https://www.anaconda.com/products/individual}. This link directs to the Anaconda distribution to install Jupyter and Python. Let the instructor know if you face any issues with installing it.
+
+\subsubsection*{Exams and Assignments}
+There will be one midterm on theories discussed during the lectures. Students are also expected to submit biweekly assignments and a final project in which they apply the practiced methods to a pre-defined problem. The reports should be submitted via Canvas.
+
+We will have seven assignments during the term, which will consist of programming tasks designed to give you experience working with big and otherwise challenging data in the context of econometric analysis. In addition, you will complete a final project applying the methods you learn in the class to a dataset and question of your choosing. All assignments are due by \textbf{Friday, 11:59 pm} on the week listed below unless otherwise indicated.
+
+Assignments and the project will be evaluated based on both functionality and the readability/organization of the code that you write. Part of your grade for the project will also be based on a writeup of your application of the methods learned in this class.
+
+
+\subsection*{Grading Policy}
+TThe grading policy is as follow:
+\begin{itemize}
+	\item Assignments: \underline{\textbf{30\%}} (best 6 out of 7)).
+	\item Midterm: \underline{\textbf{30\%}}
+	\item Final project: \underline{\textbf{40\%}} (Paper 20\%, Presentation 20\%)
+\end{itemize}
+
+% Add a figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Fifth Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Course Schedule %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section*{Schedule and weekly learning goals}
+
+The schedule is tentative and subject to change. This schedule should be viewed as a road map to the key concepts that students should learn and study before each exam.
+
+% Set first date of the semester (for some reason this is a week before what comes up, but that's easy to get around)
+\SetDate[17/01/2022]
+\week{Week 01} Introduction to Python 
+\begin{itemize}
+\item Lab 1: Introduction to Python, Jupyter notebook, Numpy and Pandas libraries
+\item Required readings: Chapter 1
+\end{itemize}
+
+\week{Week 02} Introduction to Machine Learning
+\begin{itemize}
+\item ML models, loss functions, optimization
+\item Lab 2: Pandas and Data Visualization libraries 
+\item Required readings: Chapter 2 
+\item \textbf{Assignment 1: Cleaning and Visualization of the House Prices Data}
+\end{itemize}
+
+\week{Week 03} Classification & Training Models
+\begin{itemize}
+\item Performance Measures, linear regression, gradient descent, logistic regression
+\item Lab 3: Training end-to-end ML model
+\item Required readings: Chapter 3 {\&} 4
+\end{itemize}
+
+\week{Week 04} Classification {\&} Training Models
+\begin{itemize}
+\item Ridge, Lasso, Elastic Net, early stopping
+\item Lab 4: Bias-variance trade-off, overfitting and underfitting, hyperparameter tuning
+\item Required readings: Chapter 3 {\&} 4
+\item \textbf{Assignment 2: House Prices - Advanced Regression Techniques}
+\end{itemize}
+
+\week{Week 05} Decision Trees
+\begin{itemize}
+\item Classification Tree, Gini Impurity, Entropy, Regression Tree
+\item Lab 6: Decision Tree
+\item Required readings: Chapter 6
+\end{itemize}
+
+\week{Week 06} Decision Trees
+\begin{itemize}
+\item Voting Classifiers, Random Forests 
+\item Lab 6: Random Forest
+\item Required readings: Chapter 6
+\item \textbf{Assignment 3: Predict Future Sales. Predict total sales for every product and store in the next month}
+\end{itemize}
+
+\week{Week 07} Tree Based Methods
+\begin{itemize}
+\item AdaBoost, Gradient Boosting, XGboost, Feature Importance techniques
+\item Lab 7: Boosting models, Hyper-parameters Tuning 
+\item Required readings: Chapter 7
+
+\end{itemize}
+
+\week{Week 08} \textbf{Midterm}
+\begin{itemize}
+\item Kaggle Competition
+\end{itemize}
+
+\week{Week 09} Dimensionality Reduction
+\begin{itemize}
+\item PCA
+\item Lab 8: Main Approaches for Dimensionality Reduction
+\item Required readings: Chapter 8
+\end{itemize}
+
+
+\week{Week 10} No Class
+\begin{itemize}
+\item \textbf{Assignment 4: G-Research Crypto Forecasting. Use your ML expertise to predict real crypto market data.}
+\end{itemize}
+
+\week{Week 11} Perceptron {\&} Neural Network 
+\begin{itemize}
+\item MLP, Stochastic Gradient Descent
+\item Lab 11: Implementing MLPs with Keras
+\item Required readings: Chapter 10 {\&} Chapter 11
+
+\end{itemize}
+
+\week{Week 12} Perceptron {\&} Neural Network 
+\begin{itemize}
+\item Deep Learning
+\item Lab 12: Loading and Preprocessing Data with TensorFlow 
+\item Required readings: Chapter 12 {\&} Chapter 13
+\item \textbf{Assignment 5: Time Series Forecasting. Use machine learning to predict grocery sales}
+\end{itemize}
+
+\week{Week 13} Perceptron {\&} Neural Network
+\begin{itemize}
+\item RNN
+\item Lab 13: Time-Series Problem
+\item Required readings: Chapter 15
+
+\end{itemize}
+
+\week{Week 14} Processing Sequences Using RNNs and CNNs
+\begin{itemize}
+\item LSTM, GRU
+\item Lab 14: Text as data 
+\item Required readings: Chapter 16
+\item \textbf{Assignment 6: Natural Language Processing with Disaster Tweets. Predict which Tweets are about real disasters and which ones are not}
+\end{itemize}
+
+\week{Week 15} Machine Learning and Causal Inference 
+\begin{itemize}
+\item Matching/Balance using ML, Shrinkage estimators {\&} variable selection
+\item Required Reading:  Belloni {\&} Chernozhukov (2013); Belloni, Chernozhukov {\&} Hansen (2014); Abadie {\&} Kasy (2017)
+\item Lab 15: Replication
+\end{itemize}
+
+
+\week{Week 16} Machine Learning and Causal Inference
+\begin{itemize}
+\item Counterfactual prediction, IV using ML
+\item Required Reading:  Carvalho et al (2015); Athey et al. (2018); Belloni, Chernozhukov {\&} Hansen (2012); Hartford et al. (2017)
+\item Lab 16: Replication
+
+\item \textbf{Assignment 7: Replication of the Paper on IV}
+\end{itemize}
+
+\week{Week 17} \textbf{Final Presentation}
+
+\end{document}
+
+
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
